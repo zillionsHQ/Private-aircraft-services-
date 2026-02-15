@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Raleway:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
@@ -46,7 +46,7 @@
     </div>
   </header>
 
-  <!-- Hero — Luxury FBO Terminal Perspective -->
+  <!-- Hero — Luxury FBO Terminal Perspective (real photo: person at terminal window viewing aircraft on tarmac) -->
   <section class="hero" id="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -57,47 +57,51 @@
         <a href="#charter-services" class="btn btn-outline">Explore Services</a>
       </div>
     </div>
-    <!-- Tarmac Aircraft Silhouettes -->
+    <!-- Clickable Aircraft on Tarmac — click to see services and options -->
     <div class="tarmac-line">
       <div class="runway-line"></div>
-      <a href="#charter-services" class="aircraft-silhouette" data-aircraft="light-jet">
-        <svg viewBox="0 0 120 40" class="aircraft-svg">
+      <a href="#charter-services" class="aircraft-silhouette" data-aircraft="light-jet" aria-label="View Light Jet services">
+        <svg viewBox="0 0 120 40" class="aircraft-svg" role="img" aria-label="Light Jet silhouette">
           <path d="M10,25 L30,25 L45,15 L75,15 L80,10 L85,15 L105,15 L110,20 L105,25 L85,25 L75,30 L45,30 L30,25 Z" fill="currentColor"/>
         </svg>
         <div class="aircraft-tooltip">
           <strong>Light Jet</strong>
           <span>4–7 seats · Up to 2,500 nm range. Ideal for regional flights and short business trips.</span>
+          <span class="tooltip-cta">Click to view services →</span>
         </div>
       </a>
-      <a href="#charter-services" class="aircraft-silhouette" data-aircraft="midsize-jet">
-        <svg viewBox="0 0 140 45" class="aircraft-svg">
+      <a href="#charter-services" class="aircraft-silhouette" data-aircraft="midsize-jet" aria-label="View Midsize Jet services">
+        <svg viewBox="0 0 140 45" class="aircraft-svg" role="img" aria-label="Midsize Jet silhouette">
           <path d="M8,28 L28,28 L48,16 L88,16 L95,8 L100,16 L125,16 L132,22 L125,28 L100,28 L88,34 L48,34 L28,28 Z" fill="currentColor"/>
         </svg>
         <div class="aircraft-tooltip">
           <strong>Midsize Jet</strong>
           <span>7–9 seats · Up to 3,500 nm range. Stand-up cabin with enhanced amenities.</span>
+          <span class="tooltip-cta">Click to view services →</span>
         </div>
       </a>
-      <a href="#charter-services" class="aircraft-silhouette" data-aircraft="heavy-jet">
-        <svg viewBox="0 0 160 50" class="aircraft-svg">
+      <a href="#charter-services" class="aircraft-silhouette" data-aircraft="heavy-jet" aria-label="View Heavy Jet services">
+        <svg viewBox="0 0 160 50" class="aircraft-svg" role="img" aria-label="Heavy Jet silhouette">
           <path d="M6,30 L30,30 L50,16 L100,16 L110,6 L116,16 L142,16 L150,24 L142,32 L116,32 L100,40 L50,40 L30,30 Z" fill="currentColor"/>
         </svg>
         <div class="aircraft-tooltip">
           <strong>Heavy Jet</strong>
           <span>10–16 seats · Up to 6,000 nm range. Full-size cabin with sleeping quarters.</span>
+          <span class="tooltip-cta">Click to view services →</span>
         </div>
       </a>
-      <a href="#charter-services" class="aircraft-silhouette" data-aircraft="ultra-long">
-        <svg viewBox="0 0 180 55" class="aircraft-svg">
+      <a href="#charter-services" class="aircraft-silhouette" data-aircraft="ultra-long" aria-label="View Ultra-Long-Range services">
+        <svg viewBox="0 0 180 55" class="aircraft-svg" role="img" aria-label="Ultra-Long-Range silhouette">
           <path d="M5,33 L32,33 L55,17 L115,17 L128,5 L134,17 L160,17 L170,27 L160,37 L134,37 L115,47 L55,47 L32,33 Z" fill="currentColor"/>
         </svg>
         <div class="aircraft-tooltip">
           <strong>Ultra-Long-Range</strong>
           <span>Up to 19 seats · 7,500+ nm non-stop. The pinnacle of intercontinental travel.</span>
+          <span class="tooltip-cta">Click to view services →</span>
         </div>
       </a>
-      <a href="#charter-services" class="aircraft-silhouette" data-aircraft="helicopter">
-        <svg viewBox="0 0 120 50" class="aircraft-svg">
+      <a href="#charter-services" class="aircraft-silhouette" data-aircraft="helicopter" aria-label="View Helicopter services">
+        <svg viewBox="0 0 120 50" class="aircraft-svg" role="img" aria-label="Helicopter silhouette">
           <path d="M15,20 L105,20 L108,18 L108,22 L105,20" fill="currentColor" stroke="currentColor" stroke-width="1"/>
           <ellipse cx="55" cy="30" rx="25" ry="12" fill="currentColor"/>
           <path d="M80,30 L105,25 L108,28 L80,32 Z" fill="currentColor"/>
@@ -107,19 +111,22 @@
         <div class="aircraft-tooltip">
           <strong>Helicopter</strong>
           <span>2–12 seats · Point-to-point VIP transfers, island hops, and scenic tours.</span>
+          <span class="tooltip-cta">Click to view services →</span>
         </div>
       </a>
-      <a href="#charter-services" class="aircraft-silhouette" data-aircraft="turboprop">
-        <svg viewBox="0 0 130 45" class="aircraft-svg">
+      <a href="#charter-services" class="aircraft-silhouette" data-aircraft="turboprop" aria-label="View Turboprop services">
+        <svg viewBox="0 0 130 45" class="aircraft-svg" role="img" aria-label="Turboprop silhouette">
           <path d="M12,27 L32,27 L48,17 L82,17 L88,12 L92,17 L112,17 L118,22 L112,27 L92,27 L82,33 L48,33 L32,27 Z" fill="currentColor"/>
           <circle cx="70" cy="13" r="4" fill="currentColor"/>
         </svg>
         <div class="aircraft-tooltip">
           <strong>Turboprop</strong>
           <span>6–9 seats · Efficient short-field performance for regional and remote destinations.</span>
+          <span class="tooltip-cta">Click to view services →</span>
         </div>
       </a>
     </div>
+    <p class="hero-hint">Click any aircraft above to explore its services and options</p>
   </section>
 
   <!-- Charter & Flight Services -->
@@ -404,6 +411,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
