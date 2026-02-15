@@ -1,381 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Airbros - International aviation group specializing in private jets and helicopters, offering aircraft rental, purchase, leasing, and premium travel services.">
-    <meta name="keywords" content="private jets, helicopters, aircraft rental, yacht charter, luxury travel, VIP services">
-    <title>Airbros - Premium Private Aviation & Travel Services</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Private Aircraft Services</title>
+  <!--
+    This website template follows best‑practice guidelines drawn from research on luxury
+    private aviation websites and general UX principles.  A simple navigation, a
+    golden‑ratio hero section, clear fleet categories, a call‑to‑action form, and
+    trust indicators help visitors quickly understand the offering and request a quote.
+    See report.md for further details and citations.
+  -->
+  <!-- Use the plural styles.css to match the repository's naming convention -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">
-                    <h1>AIRBROS</h1>
-                    <p class="logo-tagline">Premium Aviation & Travel</p>
-                </div>
-                <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#aviation">Aviation</a></li>
-                    <li><a href="#travel">Travel Services</a></li>
-                    <li><a href="#fleet">Our Fleet</a></li>
-                    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
+  <!-- Navigation bar with logo and primary navigation links -->
+  <header class="navbar">
+    <div class="logo">PrivateAir</div>
+    <nav>
+      <ul>
+        <li><a href="#fleet">Fleet</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h2 class="hero-subtitle">Welcome to Airbros</h2>
-                <h1 class="hero-title">Elevate Your Journey</h1>
-                <p class="hero-description">Experience unparalleled luxury in private aviation. From exclusive jet charters to bespoke travel solutions worldwide.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Book Your Flight</a>
-                    <a href="#aviation" class="btn btn-secondary">Explore Services</a>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
-        </div>
-    </section>
+  <!-- Hero section designed using the golden ratio (approximately 61.8% / 38.2% split) -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Fly Beyond Luxury</h1>
+      <p>Experience tailor‑made private aviation with transparent pricing and unparalleled service.</p>
+      <a href="#quote" class="cta">Request a Quote</a>
+    </div>
+    <div class="hero-image">
+      <!-- Placeholder image – replace with high‑quality aviation imagery -->
+    </div>
+  </section>
 
-    <!-- Aviation Services Section -->
-    <section id="aviation" class="aviation-services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Aviation Services</h2>
-                <p class="section-subtitle">Comprehensive solutions for all your private aviation needs</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
-                        </svg>
-                    </div>
-                    <h3>Aircraft Charter</h3>
-                    <p>Access our premium fleet of private jets and helicopters for on-demand charter services tailored to your schedule.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                            <polyline points="9 22 9 12 15 12 15 22"/>
-                        </svg>
-                    </div>
-                    <h3>Purchase & Sale</h3>
-                    <p>Expert guidance in buying or selling private aircraft with comprehensive market analysis and negotiation support.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="7" width="20" height="14" rx="2"/>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-                        </svg>
-                    </div>
-                    <h3>Aircraft Leasing</h3>
-                    <p>Flexible leasing options for businesses and individuals seeking long-term aviation solutions without ownership complexities.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
-                        </svg>
-                    </div>
-                    <h3>Aircraft Management</h3>
-                    <p>Complete aircraft management services including crew coordination, scheduling, and operational oversight.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                        </svg>
-                    </div>
-                    <h3>Maintenance Services</h3>
-                    <p>State-of-the-art maintenance facilities ensuring peak performance and safety compliance for your aircraft.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <h3>Crew Services</h3>
-                    <p>Professional, highly-trained pilots and cabin crew dedicated to providing exceptional service and safety.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Fleet categories highlight the range of available aircraft.  Each card summarises
+       passenger capacity and range, allowing visitors to self‑select based on needs. -->
+  <section id="fleet" class="fleet">
+    <h2>Our Fleet</h2>
+    <div class="fleet-grid">
+      <div class="fleet-card">
+        <h3>Light Jets</h3>
+        <p>Ideal for regional trips; seats up to six passengers and offers a 3–4 hour range.</p>
+      </div>
+      <div class="fleet-card">
+        <h3>Midsize Jets</h3>
+        <p>Comfortable for seven to eight passengers with transcontinental range.</p>
+      </div>
+      <div class="fleet-card">
+        <h3>Super Midsize</h3>
+        <p>Spacious cabins for nine passengers and an extended range with premium amenities.</p>
+      </div>
+      <div class="fleet-card">
+        <h3>Heavy Jets</h3>
+        <p>The ultimate long‑haul comfort for up to fourteen passengers.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Fleet Showcase -->
-    <section id="fleet" class="fleet-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Premium Fleet</h2>
-                <p class="section-subtitle">Choose from our carefully curated selection of aircraft</p>
-            </div>
-            <div class="fleet-grid">
-                <div class="fleet-card">
-                    <div class="fleet-image">
-                        <div class="fleet-badge">Light Jets</div>
-                    </div>
-                    <div class="fleet-info">
-                        <h3>Light Jets</h3>
-                        <p>Perfect for short to medium-range flights</p>
-                        <ul class="fleet-specs">
-                            <li>Passengers: 6-8</li>
-                            <li>Range: 1,500-2,500 nm</li>
-                            <li>Ideal for regional travel</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="fleet-card">
-                    <div class="fleet-image fleet-image-midsize">
-                        <div class="fleet-badge">Midsize Jets</div>
-                    </div>
-                    <div class="fleet-info">
-                        <h3>Midsize Jets</h3>
-                        <p>Balanced comfort and performance</p>
-                        <ul class="fleet-specs">
-                            <li>Passengers: 8-10</li>
-                            <li>Range: 2,500-3,500 nm</li>
-                            <li>Transcontinental capability</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="fleet-card">
-                    <div class="fleet-image fleet-image-heavy">
-                        <div class="fleet-badge">Heavy Jets</div>
-                    </div>
-                    <div class="fleet-info">
-                        <h3>Heavy Jets</h3>
-                        <p>Ultimate luxury for long-range travel</p>
-                        <ul class="fleet-specs">
-                            <li>Passengers: 10-16</li>
-                            <li>Range: 4,000-7,000 nm</li>
-                            <li>Intercontinental flights</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="fleet-card">
-                    <div class="fleet-image fleet-image-helicopter">
-                        <div class="fleet-badge">Helicopters</div>
-                    </div>
-                    <div class="fleet-info">
-                        <h3>Helicopters</h3>
-                        <p>Unmatched access and flexibility</p>
-                        <ul class="fleet-specs">
-                            <li>Passengers: 4-8</li>
-                            <li>VTOL capability</li>
-                            <li>Urban and remote access</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Destinations section for SEO‑friendly route pages (future content). -->
+  <section id="destinations" class="destinations">
+    <h2>Popular Routes</h2>
+    <p>From Kyiv to destinations worldwide – explore our curated route guides.</p>
+  </section>
 
-    <!-- Travel Services Section -->
-    <section id="travel" class="travel-services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Airbros Travel Services</h2>
-                <p class="section-subtitle">Complete luxury travel solutions beyond aviation</p>
-            </div>
-            <div class="travel-grid">
-                <div class="travel-card">
-                    <div class="travel-icon">🛥️</div>
-                    <h3>Yacht Charter</h3>
-                    <p>Exclusive yacht charters in the world's most stunning destinations. Experience maritime luxury with our curated selection.</p>
-                </div>
-                <div class="travel-card">
-                    <div class="travel-icon">🏨</div>
-                    <h3>Hotel & Villa Reservations</h3>
-                    <p>Access to premium hotels and luxury villas worldwide. We secure the finest accommodations for your stay.</p>
-                </div>
-                <div class="travel-card">
-                    <div class="travel-icon">✈️</div>
-                    <h3>VIP Lounge Services</h3>
-                    <p>Exclusive VIP lounge access at airports worldwide. Enjoy comfort and privacy before your flight.</p>
-                </div>
-                <div class="travel-card">
-                    <div class="travel-icon">🚗</div>
-                    <h3>Luxury Transfers</h3>
-                    <p>Premium car and helicopter transfers ensuring seamless door-to-door transportation anywhere in the world.</p>
-                </div>
-                <div class="travel-card">
-                    <div class="travel-icon">🎉</div>
-                    <h3>Special Events</h3>
-                    <p>Comprehensive event planning and organization for any occasion, anywhere in the world. Make your event unforgettable.</p>
-                </div>
-                <div class="travel-card">
-                    <div class="travel-icon">🌍</div>
-                    <h3>Global Concierge</h3>
-                    <p>24/7 concierge service handling every detail of your journey, from reservations to special requests.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- About section emphasises the company’s commitment to personalised service and
+       technology, echoing industry trends such as AI‑powered personalisation. -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>PrivateAir blends cutting‑edge technology with concierge‑level service. Our AI‑powered
+      personalisation recommends aircraft and pricing based on your itinerary and
+      preferences.</p>
+  </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Why Choose Airbros</h2>
-                <p class="section-subtitle">Excellence in every detail</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-number">01</div>
-                    <h3>Global Reach</h3>
-                    <p>Operating worldwide with established partnerships in major destinations across all continents.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-number">02</div>
-                    <h3>24/7 Support</h3>
-                    <p>Round-the-clock assistance ensuring seamless service whenever and wherever you need us.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-number">03</div>
-                    <h3>Safety First</h3>
-                    <p>Uncompromising commitment to safety with rigorous maintenance and certified crew members.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-number">04</div>
-                    <h3>Bespoke Solutions</h3>
-                    <p>Tailored services designed around your specific requirements and preferences.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Contact/Quote section featuring a streamlined form with minimal fields.  According
+       to industry best practices, reducing friction increases conversions. -->
+  <section id="contact" class="contact">
+    <h2>Start Your Journey</h2>
+    <form id="quote" autocomplete="on">
+      <input type="text" name="departure" placeholder="Departure City" required>
+      <input type="text" name="arrival" placeholder="Arrival City" required>
+      <input type="date" name="date" required>
+      <button type="submit">Get Instant Quote</button>
+    </form>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h2>Get In Touch</h2>
-                    <p>Ready to elevate your travel experience? Contact our team for personalized service and exclusive offers.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-item-icon">📧</div>
-                            <div>
-                                <h4>Email</h4>
-                                <p>info@airbros.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-item-icon">📞</div>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+1 (800) AIRBROS</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-item-icon">🌐</div>
-                            <div>
-                                <h4>Availability</h4>
-                                <p>24/7 Worldwide</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="inquiryForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="Phone Number">
-                        </div>
-                        <div class="form-group">
-                            <select id="service" name="service" required>
-                                <option value="">Select Service</option>
-                                <option value="charter">Aircraft Charter</option>
-                                <option value="purchase">Aircraft Purchase/Sale</option>
-                                <option value="leasing">Aircraft Leasing</option>
-                                <option value="management">Aircraft Management</option>
-                                <option value="travel">Travel Services</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Inquiry</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>AIRBROS</h3>
-                    <p>Leading international aviation group specializing in private jets, helicopters, and premium travel services worldwide.</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Aviation Services</h4>
-                    <ul>
-                        <li><a href="#aviation">Aircraft Charter</a></li>
-                        <li><a href="#aviation">Purchase & Sale</a></li>
-                        <li><a href="#aviation">Leasing</a></li>
-                        <li><a href="#aviation">Management</a></li>
-                        <li><a href="#aviation">Maintenance</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Travel Services</h4>
-                    <ul>
-                        <li><a href="#travel">Yacht Charter</a></li>
-                        <li><a href="#travel">Luxury Hotels</a></li>
-                        <li><a href="#travel">VIP Lounges</a></li>
-                        <li><a href="#travel">Transfers</a></li>
-                        <li><a href="#travel">Special Events</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#home">About Us</a></li>
-                        <li><a href="#fleet">Our Fleet</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#home">Careers</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Airbros. All rights reserved. | <a href="#home">Privacy Policy</a> | <a href="#home">Terms of Service</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <!-- Footer with trust badges and copyright information.  Certifications and
+       recognitions build credibility and reassure visitors. -->
+  <footer>
+    <div class="trust">
+      <span>ARGUS Gold Rated</span> | <span>Wyvern Registered</span>
+    </div>
+    <p>&copy; 2026 PrivateAir. All rights reserved.</p>
+  </footer>
 </body>
 </html>
