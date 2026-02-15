@@ -233,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
 .mobile-menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-/* ── Hero — Luxury FBO Terminal Perspective ────────────────── */
+/* ── Hero — Real photo: person at luxury terminal window viewing aircraft ── */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -244,31 +244,19 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   padding: 6rem 2rem 2rem;
   overflow: hidden;
-  /* Layered: sky top, glass/window middle, polished marble floor bottom */
+  /* Real photo: person standing at luxury terminal window looking at private jets on tarmac */
   background:
-    linear-gradient(180deg,
-      #4a8ac7 0%,
-      #7ab8e0 15%,
-      var(--sky-light) 28%,
-      rgba(184, 212, 232, 0.6) 38%,
-      rgba(220, 230, 240, 0.3) 48%,
-      rgba(180, 180, 170, 0.15) 55%,
-      rgba(160, 155, 145, 0.25) 62%,
-      rgba(140, 135, 125, 0.4) 70%,
-      rgba(110, 105, 95, 0.6) 80%,
-      rgba(80, 75, 68, 0.8) 90%,
-      rgba(50, 45, 40, 0.95) 100%
-    );
+    url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1920&q=80&auto=format&fit=crop')
+    center center / cover no-repeat;
+  background-color: var(--charcoal);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  /* Glass reflection + marble floor sheen */
+  /* Dark overlay to ensure text readability over the photo */
   background:
-    radial-gradient(ellipse at 50% 35%, rgba(91, 155, 213, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 85%, rgba(200, 169, 110, 0.1) 0%, transparent 40%),
-    linear-gradient(180deg, transparent 0%, transparent 55%, rgba(255, 255, 255, 0.03) 60%, rgba(255, 255, 255, 0.06) 75%, rgba(200, 169, 110, 0.04) 100%);
+    linear-gradient(180deg, rgba(28, 40, 51, 0.55) 0%, rgba(28, 40, 51, 0.35) 40%, rgba(28, 40, 51, 0.6) 70%, rgba(28, 40, 51, 0.85) 100%);
   pointer-events: none;
 }
 
@@ -398,6 +386,28 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.78rem;
   line-height: 1.4;
 }
+.tooltip-cta {
+  color: var(--gold) !important;
+  font-size: 0.72rem !important;
+  font-weight: 500;
+  margin-top: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-hint {
+  position: absolute;
+  bottom: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.82rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  z-index: 2;
+  text-align: center;
+  white-space: nowrap;
+}
 
 /* ── Sections ──────────────────────────────────────────────── */
 .section {
@@ -459,12 +469,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ── Services Grid ─────────────────────────────────────────── */
+/* ── Services Section — Real photo: boarding a private jet ── */
 .services-section {
-  background: linear-gradient(180deg, rgba(28, 40, 51, 0.3) 0%, transparent 50%, rgba(28, 40, 51, 0.2) 100%);
+  background:
+    linear-gradient(180deg, rgba(28, 40, 51, 0.88) 0%, rgba(28, 40, 51, 0.92) 100%),
+    url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=1920&q=80&auto=format&fit=crop')
+    center center / cover no-repeat;
+  background-color: var(--charcoal);
 }
 
+/* ── Solutions Section — Real photo: walking toward a private jet on tarmac ── */
 .solutions-section {
-  background: linear-gradient(180deg, transparent 0%, rgba(91, 155, 213, 0.04) 50%, transparent 100%);
+  background:
+    linear-gradient(180deg, rgba(28, 40, 51, 0.88) 0%, rgba(28, 40, 51, 0.92) 100%),
+    url('https://images.unsplash.com/photo-1583416750470-965b2707b355?w=1920&q=80&auto=format&fit=crop')
+    center center / cover no-repeat;
+  background-color: var(--charcoal);
 }
 
 .services-grid {
@@ -514,8 +534,13 @@ h1, h2, h3, h4, h5, h6 {
 .expand-btn.active { background: transparent; color: var(--gold); border-color: var(--gold); }
 
 /* ── Why Section ───────────────────────────────────────────── */
+/* ── Why Section — Real photo: luxury private jet cabin interior ── */
 .why-section {
-  background: linear-gradient(180deg, transparent 0%, rgba(28, 40, 51, 0.3) 100%);
+  background:
+    linear-gradient(180deg, rgba(28, 40, 51, 0.9) 0%, rgba(28, 40, 51, 0.92) 100%),
+    url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&q=80&auto=format&fit=crop')
+    center center / cover no-repeat;
+  background-color: var(--charcoal);
 }
 
 .why-grid {
@@ -542,11 +567,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ── About Section ─────────────────────────────────────────── */
+/* ── About Section — Real photo: private jet on runway at sunset ── */
 .about-section {
   position: relative;
   background:
     linear-gradient(180deg, rgba(28, 40, 51, 0.85) 0%, rgba(28, 40, 51, 0.9) 100%),
-    linear-gradient(135deg, var(--charcoal), #0f1923);
+    url('https://images.unsplash.com/photo-1559268950-2d7ceb2efa3a?w=1920&q=80&auto=format&fit=crop')
+    center center / cover no-repeat;
+  background-color: var(--charcoal);
 }
 .about-overlay {
   position: absolute;
@@ -613,10 +641,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ── Quote Form ────────────────────────────────────────────── */
+/* ── Quote Form — Real photo: luxury airport terminal interior ── */
 .quote-section {
   position: relative;
   background:
-    linear-gradient(180deg, rgba(28, 40, 51, 0.9) 0%, rgba(15, 25, 35, 0.95) 100%);
+    linear-gradient(180deg, rgba(28, 40, 51, 0.9) 0%, rgba(15, 25, 35, 0.95) 100%),
+    url('https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=1920&q=80&auto=format&fit=crop')
+    center center / cover no-repeat;
+  background-color: var(--charcoal);
 }
 .quote-overlay {
   position: absolute;
@@ -688,8 +720,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ── Contact Grid ──────────────────────────────────────────── */
+/* ── Contact Grid — Real photo: aircraft at FBO terminal ── */
 .contact-section {
-  background: linear-gradient(180deg, rgba(28, 40, 51, 0.2) 0%, rgba(28, 40, 51, 0.4) 100%);
+  background:
+    linear-gradient(180deg, rgba(28, 40, 51, 0.88) 0%, rgba(28, 40, 51, 0.92) 100%),
+    url('https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?w=1920&q=80&auto=format&fit=crop')
+    center center / cover no-repeat;
+  background-color: var(--charcoal);
 }
 
 .contact-grid {
@@ -830,6 +867,7 @@ footer {
   }
   .aircraft-svg { width: 45px; }
   .aircraft-tooltip { min-width: 150px; font-size: 0.75rem; }
+  .hero-hint { font-size: 0.72rem; white-space: normal; max-width: 90%; }
 
   .services-grid {
     grid-template-columns: 1fr;

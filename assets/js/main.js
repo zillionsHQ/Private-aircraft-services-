@@ -173,8 +173,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.nav-menu > li > a').forEach(function (link) {
           link.classList.remove('active-link');
         });
-        var activeLink = document.querySelector(`.nav-menu > li > a[href="#${sectionId}"]`);
-        if (activeLink) activeLink.classList.add('active-link');
+        if (sectionId && /^[a-zA-Z0-9_-]+$/.test(sectionId)) {
+          var activeLink = document.querySelector('.nav-menu > li > a[href="#' + sectionId + '"]');
+          if (activeLink) activeLink.classList.add('active-link');
+        }
       }
     });
   }
