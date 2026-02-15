@@ -61,10 +61,6 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   letter-spacing: 0.04em;
 }
-.btn:hover {
-  transform: scale(1.05);
-}
-
 .btn-gold {
   background: linear-gradient(135deg, var(--gold), var(--gold-hover));
   color: var(--charcoal);
@@ -73,6 +69,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-gold:hover {
   background: linear-gradient(135deg, var(--gold-hover), var(--gold));
   color: var(--charcoal);
+  transform: scale(1.05);
   box-shadow: 0 0 24px rgba(200, 169, 110, 0.4);
 }
 
@@ -84,6 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-outline:hover {
   background: var(--gold);
   color: var(--charcoal);
+  transform: scale(1.05);
   box-shadow: 0 0 20px rgba(200, 169, 110, 0.25);
 }
 
@@ -96,6 +94,7 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 255, 255, 0.12);
   color: var(--white);
   border-color: rgba(255, 255, 255, 0.7);
+  transform: scale(1.05);
 }
 
 .btn-sm { padding: 0.5rem 1.2rem; font-size: 0.82rem; }
@@ -820,7 +819,7 @@ footer {
     margin-top: 0.5rem;
   }
 
-  .hero { padding-bottom: 6rem; }
+  .hero { padding: 6rem 2rem 6rem; }
   .hero-actions { flex-direction: column; align-items: center; }
 
   .tarmac-line {
