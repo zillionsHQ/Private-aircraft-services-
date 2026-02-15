@@ -12,12 +12,9 @@
   --gold: #d4a843;
   --gold-hover: #c49a38;
   --gold-light: #f1d89a;
-  --cream: #faf8f5;
   --white: #ffffff;
   --text: #e8e6e3;
-  --text-dark: #2c2c2c;
   --glass: rgba(26, 35, 50, 0.85);
-  --glass-light: rgba(26, 35, 50, 0.7);
   --radius: 8px;
   --shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -60,12 +57,12 @@ a:hover { color: var(--gold-light); }
 }
 
 .btn-gold {
-  background: linear-gradient(135deg, var(--gold), #c49a38);
+  background: linear-gradient(135deg, var(--gold), var(--gold-hover));
   color: var(--navy);
   border-color: var(--gold);
 }
 .btn-gold:hover {
-  background: linear-gradient(135deg, #c49a38, var(--gold));
+  background: linear-gradient(135deg, var(--gold-hover), var(--gold));
   color: var(--navy);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(212, 168, 67, 0.35);
@@ -229,6 +226,17 @@ a:hover { color: var(--gold-light); }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-bottom: 1rem;
+}
+
+.hero-services {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hero-services span + span::before {
+  content: '•';
+  margin-right: 0.5rem;
 }
 
 .hero-sub {
@@ -695,6 +703,14 @@ footer {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.45);
   margin-bottom: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.trust span + span::before {
+  content: '•';
+  margin-right: 0.5rem;
 }
 
 .copyright {
