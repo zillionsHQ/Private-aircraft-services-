@@ -1,23 +1,26 @@
 /*
   Novans Jets — Private Aircraft Services
-  Luxury aviation website with third-person airport perspective,
-  expanding sections, actionable buttons and golden-ratio layout.
-  Palette: deep navy, gold accents and light neutrals.
+  Golden–sky–light blue palette with luxury FBO terminal aesthetic.
+  Fonts: Cormorant Garamond (headings), Raleway (body).
 */
 
 /* ── Variables ─────────────────────────────────────────────── */
 :root {
-  --navy: #1a2332;
-  --navy-light: #2e4053;
-  --gold: #d4a843;
-  --gold-hover: #c49a38;
-  --gold-light: #f1d89a;
-  --white: #ffffff;
+  --gold: #C8A96E;
+  --gold-hover: #b8994e;
+  --gold-light: #e2d1a8;
+  --sky: #5B9BD5;
+  --sky-light: #B8D4E8;
+  --charcoal: #1C2833;
+  --white: #FFFFFF;
   --text: #e8e6e3;
-  --glass: rgba(26, 35, 50, 0.85);
-  --radius: 8px;
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  --glass: rgba(28, 40, 51, 0.8);
+  --glass-light: rgba(91, 155, 213, 0.08);
+  --radius: 10px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Raleway', 'Segoe UI', sans-serif;
 }
 
 /* ── Reset & Base ──────────────────────────────────────────── */
@@ -26,14 +29,11 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-body);
+  font-weight: 300;
   color: var(--text);
   line-height: 1.7;
-  /* Third-person luxury airport terminal background */
-  background:
-    linear-gradient(180deg, rgba(15, 20, 30, 0.75) 0%, rgba(20, 28, 42, 0.6) 50%, rgba(10, 15, 25, 0.8) 100%),
-    url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
-  background-color: var(--navy);
+  background: linear-gradient(180deg, var(--charcoal) 0%, #0f1923 50%, var(--charcoal) 100%);
   min-height: 100vh;
 }
 
@@ -42,30 +42,38 @@ img { max-width: 100%; height: auto; }
 a { color: var(--gold); text-decoration: none; transition: color var(--transition); }
 a:hover { color: var(--gold-light); }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
 /* ── Buttons ───────────────────────────────────────────────── */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.75rem;
   border-radius: var(--radius);
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
   cursor: pointer;
   transition: all var(--transition);
   border: 2px solid transparent;
   text-align: center;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.04em;
+}
+.btn:hover {
+  transform: scale(1.05);
 }
 
 .btn-gold {
   background: linear-gradient(135deg, var(--gold), var(--gold-hover));
-  color: var(--navy);
+  color: var(--charcoal);
   border-color: var(--gold);
 }
 .btn-gold:hover {
   background: linear-gradient(135deg, var(--gold-hover), var(--gold));
-  color: var(--navy);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 168, 67, 0.35);
+  color: var(--charcoal);
+  box-shadow: 0 0 24px rgba(200, 169, 110, 0.4);
 }
 
 .btn-outline {
@@ -75,22 +83,23 @@ a:hover { color: var(--gold-light); }
 }
 .btn-outline:hover {
   background: var(--gold);
-  color: var(--navy);
-  transform: translateY(-2px);
+  color: var(--charcoal);
+  box-shadow: 0 0 20px rgba(200, 169, 110, 0.25);
 }
 
 .btn-outline-light {
   background: transparent;
   color: var(--white);
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 .btn-outline-light:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
   color: var(--white);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
-.btn-sm { padding: 0.5rem 1.2rem; font-size: 0.85rem; }
-.btn-lg { padding: 1rem 2.5rem; font-size: 1.05rem; }
+.btn-sm { padding: 0.5rem 1.2rem; font-size: 0.82rem; }
+.btn-lg { padding: 1rem 2.5rem; font-size: 1rem; }
 
 /* ── Navbar ────────────────────────────────────────────────── */
 .navbar {
@@ -99,10 +108,10 @@ a:hover { color: var(--gold-light); }
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(26, 35, 50, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(28, 40, 51, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
   transition: background var(--transition), box-shadow var(--transition);
 }
 
@@ -116,8 +125,9 @@ a:hover { color: var(--gold-light); }
 }
 
 .logo {
-  font-size: 1.55rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 500;
   color: var(--gold);
   letter-spacing: 0.04em;
 }
@@ -129,37 +139,78 @@ a:hover { color: var(--gold-light); }
   gap: 1.5rem;
 }
 
+.nav-menu > li { position: relative; }
+
 .nav-menu a {
   color: var(--white);
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-weight: 400;
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
   transition: color var(--transition);
   position: relative;
 }
-.nav-menu a::after {
+.nav-menu > li > a::after {
   content: '';
   position: absolute;
   left: 0;
   bottom: -4px;
   width: 0;
-  height: 2px;
+  height: 1.5px;
   background: var(--gold);
   transition: width var(--transition);
 }
-.nav-menu a:hover::after,
-.nav-menu a.active-link::after { width: 100%; }
+.nav-menu > li > a:hover::after,
+.nav-menu > li > a.active-link::after { width: 100%; }
 .nav-menu a:hover { color: var(--gold); }
+
+/* Dropdown */
+.nav-dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: -0.5rem;
+  min-width: 200px;
+  background: rgba(28, 40, 51, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(200, 169, 110, 0.15);
+  border-radius: var(--radius);
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all var(--transition);
+  list-style: none;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.dropdown-menu li a {
+  display: block;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all var(--transition);
+}
+.dropdown-menu li a::after { display: none; }
+.dropdown-menu li a:hover {
+  color: var(--gold);
+  background: rgba(200, 169, 110, 0.08);
+}
 
 .nav-cta {
   background: var(--gold) !important;
-  color: var(--navy) !important;
+  color: var(--charcoal) !important;
   padding: 0.5rem 1.2rem;
   border-radius: var(--radius);
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 .nav-cta:hover {
   background: var(--gold-hover) !important;
   transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(200, 169, 110, 0.3);
 }
 .nav-cta::after { display: none !important; }
 
@@ -183,68 +234,68 @@ a:hover { color: var(--gold-light); }
 .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
 .mobile-menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-/* ── Hero ──────────────────────────────────────────────────── */
+/* ── Hero — Luxury FBO Terminal Perspective ────────────────── */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 6rem 2rem 4rem;
-  /* Third-person perspective: looking from behind a figure towards runway */
-  background:
-    linear-gradient(180deg, rgba(10, 15, 25, 0.55) 0%, rgba(10, 15, 25, 0.8) 100%),
-    url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  padding: 6rem 2rem 2rem;
   overflow: hidden;
+  /* Layered: sky top, glass/window middle, polished marble floor bottom */
+  background:
+    linear-gradient(180deg,
+      #4a8ac7 0%,
+      #7ab8e0 15%,
+      var(--sky-light) 28%,
+      rgba(184, 212, 232, 0.6) 38%,
+      rgba(220, 230, 240, 0.3) 48%,
+      rgba(180, 180, 170, 0.15) 55%,
+      rgba(160, 155, 145, 0.25) 62%,
+      rgba(140, 135, 125, 0.4) 70%,
+      rgba(110, 105, 95, 0.6) 80%,
+      rgba(80, 75, 68, 0.8) 90%,
+      rgba(50, 45, 40, 0.95) 100%
+    );
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 80%, rgba(212, 168, 67, 0.08) 0%, transparent 70%);
+  /* Glass reflection + marble floor sheen */
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(91, 155, 213, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 85%, rgba(200, 169, 110, 0.1) 0%, transparent 40%),
+    linear-gradient(180deg, transparent 0%, transparent 55%, rgba(255, 255, 255, 0.03) 60%, rgba(255, 255, 255, 0.06) 75%, rgba(200, 169, 110, 0.04) 100%);
   pointer-events: none;
 }
 
 .hero-content {
   position: relative;
-  max-width: 800px;
-  z-index: 1;
+  max-width: 700px;
+  z-index: 2;
+  margin-bottom: 4rem;
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  margin-bottom: 0.75rem;
   letter-spacing: 0.02em;
   color: var(--white);
-}
-
-.hero-content > p:first-of-type {
-  font-size: 1.15rem;
-  color: var(--gold);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.hero-services {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.hero-services span + span::before {
-  content: '•';
-  margin-right: 0.5rem;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
 }
 
 .hero-sub {
   font-size: 1.1rem;
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto 2rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
   line-height: 1.8;
+  font-weight: 300;
 }
 
 .hero-actions {
@@ -252,6 +303,101 @@ a:hover { color: var(--gold-light); }
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+/* ── Tarmac Aircraft Silhouettes ───────────────────────────── */
+.tarmac-line {
+  position: absolute;
+  bottom: 18%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(1rem, 3vw, 3rem);
+  z-index: 2;
+  padding: 0 2rem;
+}
+
+.runway-line {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.2) 80%, transparent);
+}
+
+.aircraft-silhouette {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+}
+.aircraft-silhouette:hover {
+  color: var(--gold);
+  transform: translateY(-8px) scale(1.1);
+  filter: drop-shadow(0 4px 20px rgba(200, 169, 110, 0.4));
+}
+
+.aircraft-svg {
+  width: clamp(50px, 8vw, 90px);
+  height: auto;
+  transition: all var(--transition);
+}
+
+/* Aircraft Tooltip */
+.aircraft-tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(28, 40, 51, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(200, 169, 110, 0.3);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  min-width: 180px;
+  max-width: 220px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(8px);
+  transition: all var(--transition);
+  pointer-events: none;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+.aircraft-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(28, 40, 51, 0.95);
+}
+.aircraft-silhouette:hover .aircraft-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.aircraft-tooltip strong {
+  display: block;
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+.aircraft-tooltip span {
+  display: block;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.78rem;
+  line-height: 1.4;
 }
 
 /* ── Sections ──────────────────────────────────────────────── */
@@ -269,7 +415,9 @@ a:hover { color: var(--gold-light); }
 
 .section-title {
   text-align: center;
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 400;
   margin-bottom: 0.5rem;
   color: var(--white);
   letter-spacing: 0.02em;
@@ -278,47 +426,46 @@ a:hover { color: var(--gold-light); }
 
 .section-subtitle {
   text-align: center;
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 3rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
-.section-subtitle.light { color: rgba(255, 255, 255, 0.75); }
+.section-subtitle.light { color: rgba(255, 255, 255, 0.7); }
 
 .section-action { text-align: center; margin-top: 2.5rem; }
 
 /* ── Glass Card Base ───────────────────────────────────────── */
 .service-card,
-.fleet-card,
-.mgmt-card,
 .why-card,
-.dest-card,
-.step-card,
 .contact-card {
   background: var(--glass);
-  border: 1px solid rgba(212, 168, 67, 0.15);
+  border: 1px solid rgba(200, 169, 110, 0.12);
   border-radius: var(--radius);
   padding: 1.75rem;
   transition: all var(--transition);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .service-card:hover,
-.fleet-card:hover,
-.mgmt-card:hover,
 .why-card:hover,
-.dest-card:hover,
-.step-card:hover,
 .contact-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(212, 168, 67, 0.35);
-  box-shadow: var(--shadow);
+  transform: scale(1.03) translateY(-6px);
+  border-color: rgba(200, 169, 110, 0.35);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(200, 169, 110, 0.08);
 }
 
 /* ── Services Grid ─────────────────────────────────────────── */
 .services-section {
-  background: linear-gradient(180deg, rgba(15, 20, 30, 0.4) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(28, 40, 51, 0.3) 0%, transparent 50%, rgba(28, 40, 51, 0.2) 100%);
+}
+
+.solutions-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(91, 155, 213, 0.04) 50%, transparent 100%);
 }
 
 .services-grid {
@@ -332,23 +479,22 @@ a:hover { color: var(--gold-light); }
   margin-bottom: 0.75rem;
 }
 
-.service-card h3,
-.fleet-card h3,
-.mgmt-card h3 {
+.service-card h3 {
+  font-family: var(--font-heading);
   color: var(--gold);
   margin-bottom: 0.5rem;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
-.service-card p,
-.fleet-card p,
-.mgmt-card p {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.95rem;
+.service-card p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.92rem;
   margin-bottom: 0.75rem;
+  font-weight: 300;
 }
 
-/* ── Expanding Content ─────────────────────────────────────── */
+/* ── Expanding Content (Tooltips / Descriptions) ───────────── */
 .expand-content {
   max-height: 0;
   overflow: hidden;
@@ -360,7 +506,7 @@ a:hover { color: var(--gold-light); }
   max-height: 500px;
   opacity: 1;
   padding-top: 1rem;
-  border-top: 1px solid rgba(212, 168, 67, 0.2);
+  border-top: 1px solid rgba(200, 169, 110, 0.15);
   margin-top: 0.75rem;
 }
 .expand-content p { margin-bottom: 0.75rem; }
@@ -368,98 +514,9 @@ a:hover { color: var(--gold-light); }
 .expand-btn { margin-bottom: 0; }
 .expand-btn.active { background: transparent; color: var(--gold); border-color: var(--gold); }
 
-/* ── Fleet Grid ────────────────────────────────────────────── */
-.fleet-section {
-  background: linear-gradient(180deg, transparent 0%, rgba(15, 20, 30, 0.3) 100%);
-}
-
-.fleet-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.fleet-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.fleet-tag {
-  background: rgba(212, 168, 67, 0.15);
-  color: var(--gold);
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.fleet-card ul {
-  list-style: none;
-  padding: 0;
-}
-.fleet-card ul li {
-  padding: 0.3rem 0;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-.fleet-card ul li:last-child { border-bottom: none; }
-
-/* ── Charter Steps ─────────────────────────────────────────── */
-.charter-section {
-  position: relative;
-  background:
-    linear-gradient(180deg, rgba(10, 15, 25, 0.8) 0%, rgba(10, 15, 25, 0.85) 100%),
-    url('https://images.unsplash.com/photo-1436491865332-7a61a109db05?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
-}
-.charter-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 30%, rgba(212, 168, 67, 0.06) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.charter-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-.step-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--gold);
-  opacity: 0.3;
-  line-height: 1;
-  margin-bottom: 0.75rem;
-}
-
-.step-card h3 {
-  color: var(--gold);
-  margin-bottom: 0.5rem;
-}
-.step-card p {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.95rem;
-  margin-bottom: 0.75rem;
-}
-
-/* ── Management Grid ───────────────────────────────────────── */
-.management-section {
-  background: linear-gradient(180deg, rgba(15, 20, 30, 0.3) 0%, transparent 100%);
-}
-
-.mgmt-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-}
-
 /* ── Why Section ───────────────────────────────────────────── */
 .why-section {
-  background: linear-gradient(180deg, transparent 0%, rgba(15, 20, 30, 0.4) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(28, 40, 51, 0.3) 100%);
 }
 
 .why-grid {
@@ -473,26 +530,29 @@ a:hover { color: var(--gold-light); }
   margin-bottom: 0.75rem;
 }
 .why-card h3 {
+  font-family: var(--font-heading);
   color: var(--gold);
   margin-bottom: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  font-weight: 500;
 }
 .why-card p {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 0.9rem;
+  font-weight: 300;
 }
 
 /* ── About Section ─────────────────────────────────────────── */
 .about-section {
   position: relative;
   background:
-    linear-gradient(180deg, rgba(10, 15, 25, 0.8) 0%, rgba(10, 15, 25, 0.85) 100%),
-    url('https://images.unsplash.com/photo-1559628233-100c798642d4?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+    linear-gradient(180deg, rgba(28, 40, 51, 0.85) 0%, rgba(28, 40, 51, 0.9) 100%),
+    linear-gradient(135deg, var(--charcoal), #0f1923);
 }
 .about-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 30% 50%, rgba(212, 168, 67, 0.06) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 30% 50%, rgba(91, 155, 213, 0.06) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -504,9 +564,10 @@ a:hover { color: var(--gold-light); }
 }
 
 .about-text p {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.82);
   margin-bottom: 1rem;
-  font-size: 1.02rem;
+  font-size: 1rem;
+  font-weight: 300;
 }
 .about-actions {
   display: flex;
@@ -522,59 +583,46 @@ a:hover { color: var(--gold-light); }
 }
 .stat {
   background: var(--glass);
-  border: 1px solid rgba(212, 168, 67, 0.2);
+  border: 1px solid rgba(200, 169, 110, 0.15);
   border-radius: var(--radius);
   padding: 1.25rem;
   text-align: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all var(--transition);
+}
+.stat:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200, 169, 110, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 .stat-number {
   display: block;
+  font-family: var(--font-heading);
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--gold);
 }
 .stat-label {
   display: block;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.55);
   margin-top: 0.25rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-}
-
-/* ── Destinations ──────────────────────────────────────────── */
-.destinations-section {
-  background: linear-gradient(180deg, transparent 0%, rgba(15, 20, 30, 0.3) 100%);
-}
-
-.dest-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.25rem;
-}
-.dest-card { text-align: center; }
-.dest-card h3 {
-  color: var(--gold);
-  font-size: 1.2rem;
-  margin-bottom: 0.35rem;
-}
-.dest-card p {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.85rem;
-  margin-bottom: 0.75rem;
+  font-weight: 400;
 }
 
 /* ── Quote Form ────────────────────────────────────────────── */
 .quote-section {
   position: relative;
   background:
-    linear-gradient(180deg, rgba(10, 15, 25, 0.85) 0%, rgba(10, 15, 25, 0.9) 100%),
-    url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=1920&q=80') center bottom/cover no-repeat fixed;
+    linear-gradient(180deg, rgba(28, 40, 51, 0.9) 0%, rgba(15, 25, 35, 0.95) 100%);
 }
 .quote-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 60%, rgba(212, 168, 67, 0.06) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 60%, rgba(200, 169, 110, 0.05) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -582,9 +630,11 @@ a:hover { color: var(--gold-light); }
   max-width: 720px;
   margin: 0 auto;
   background: var(--glass);
-  border: 1px solid rgba(212, 168, 67, 0.2);
+  border: 1px solid rgba(200, 169, 110, 0.15);
   border-radius: var(--radius);
   padding: 2rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .form-row {
@@ -598,38 +648,40 @@ a:hover { color: var(--gold-light); }
 .form-group.full-width { margin-bottom: 1.25rem; }
 
 .form-group label {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--gold);
   margin-bottom: 0.35rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   padding: 0.75rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.05);
   color: var(--white);
-  font-size: 0.95rem;
-  font-family: inherit;
-  transition: border-color var(--transition);
+  font-size: 0.92rem;
+  font-family: var(--font-body);
+  font-weight: 300;
+  transition: border-color var(--transition), box-shadow var(--transition);
 }
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.3);
 }
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--gold);
+  box-shadow: 0 0 12px rgba(200, 169, 110, 0.15);
 }
 
-.form-group select option { background: var(--navy); color: var(--white); }
+.form-group select option { background: var(--charcoal); color: var(--white); }
 
 .quote-form .btn-lg {
   width: 100%;
@@ -638,7 +690,7 @@ a:hover { color: var(--gold-light); }
 
 /* ── Contact Grid ──────────────────────────────────────────── */
 .contact-section {
-  background: linear-gradient(180deg, rgba(15, 20, 30, 0.3) 0%, rgba(15, 20, 30, 0.5) 100%);
+  background: linear-gradient(180deg, rgba(28, 40, 51, 0.2) 0%, rgba(28, 40, 51, 0.4) 100%);
 }
 
 .contact-grid {
@@ -649,21 +701,24 @@ a:hover { color: var(--gold-light); }
 
 .contact-card { text-align: center; }
 .contact-card h3 {
+  font-family: var(--font-heading);
   color: var(--gold);
   margin-bottom: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  font-weight: 500;
 }
 .contact-card p {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.92rem;
   margin-bottom: 1rem;
   line-height: 1.6;
+  font-weight: 300;
 }
 
 /* ── Footer ────────────────────────────────────────────────── */
 footer {
-  background: rgba(10, 15, 25, 0.95);
-  border-top: 1px solid rgba(212, 168, 67, 0.15);
+  background: rgba(15, 20, 28, 0.95);
+  border-top: 1px solid rgba(200, 169, 110, 0.12);
   padding: 2.5rem 2rem;
   text-align: center;
 }
@@ -674,15 +729,17 @@ footer {
 }
 
 .footer-logo {
+  font-family: var(--font-heading);
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--gold);
 }
 .footer-brand p {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.82rem;
   margin-top: 0.25rem;
   margin-bottom: 1rem;
+  font-weight: 300;
 }
 
 .footer-links {
@@ -693,20 +750,22 @@ footer {
   margin-bottom: 1.25rem;
 }
 .footer-links a {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.84rem;
+  font-weight: 300;
   transition: color var(--transition);
 }
 .footer-links a:hover { color: var(--gold); }
 
 .trust {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
   margin-bottom: 0.75rem;
   display: flex;
   gap: 0.5rem;
   justify-content: center;
   flex-wrap: wrap;
+  font-weight: 300;
 }
 .trust span + span::before {
   content: '•';
@@ -714,8 +773,9 @@ footer {
 }
 
 .copyright {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 300;
 }
 
 /* ── Responsive ────────────────────────────────────────────── */
@@ -739,7 +799,7 @@ footer {
     width: 280px;
     height: 100vh;
     flex-direction: column;
-    background: var(--navy);
+    background: var(--charcoal);
     padding: 5rem 2rem 2rem;
     gap: 1.25rem;
     transition: right var(--transition);
@@ -748,25 +808,43 @@ footer {
   }
   .nav-menu.active { right: 0; }
 
+  .nav-dropdown .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: rgba(255, 255, 255, 0.04);
+    border: none;
+    box-shadow: none;
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero { padding-bottom: 6rem; }
   .hero-actions { flex-direction: column; align-items: center; }
 
-  .services-grid,
-  .fleet-grid,
-  .mgmt-grid,
-  .charter-steps {
+  .tarmac-line {
+    bottom: 8%;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .aircraft-svg { width: 45px; }
+  .aircraft-tooltip { min-width: 150px; font-size: 0.75rem; }
+
+  .services-grid {
     grid-template-columns: 1fr;
   }
 
   .form-row { grid-template-columns: 1fr; }
 
   .about-stats { flex-direction: column; }
-
-  .dest-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 480px) {
   .section { padding: 3rem 1rem; }
-  .dest-grid { grid-template-columns: 1fr; }
+  .aircraft-svg { width: 36px; }
+  .tarmac-line { gap: 0.3rem; }
 }
 
 /* ── Animations ────────────────────────────────────────────── */
@@ -776,23 +854,15 @@ footer {
 }
 
 .service-card,
-.fleet-card,
-.mgmt-card,
 .why-card,
-.dest-card,
-.step-card,
 .contact-card,
 .stat {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow var(--transition), border-color var(--transition);
 }
 .service-card.visible,
-.fleet-card.visible,
-.mgmt-card.visible,
 .why-card.visible,
-.dest-card.visible,
-.step-card.visible,
 .contact-card.visible,
 .stat.visible {
   opacity: 1;

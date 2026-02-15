@@ -1,5 +1,5 @@
 // Novans Jets — Interactive functionality
-// Expanding sections, smooth scrolling, mobile menu, scroll animations
+// Expanding sections, smooth scrolling, mobile menu, scroll animations, aircraft tooltips
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -37,16 +37,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ── Navbar Scroll Effect ────────────────────────────────────
+  // ── Navbar Scroll Effect (new palette) ──────────────────────
   var navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function () {
     if (!navbar) return;
     if (window.scrollY > 100) {
-      navbar.style.background = 'rgba(26, 35, 50, 0.98)';
+      navbar.style.background = 'rgba(28, 40, 51, 0.98)';
       navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
     } else {
-      navbar.style.background = 'rgba(26, 35, 50, 0.95)';
-      navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+      navbar.style.background = 'rgba(28, 40, 51, 0.92)';
+      navbar.style.boxShadow = '0 1px 8px rgba(0, 0, 0, 0.1)';
     }
   });
 
@@ -62,12 +62,12 @@ document.addEventListener('DOMContentLoaded', function () {
       var isOpen = content.classList.contains('open');
 
       // Close all other open panels in the same parent grid
-      var parentGrid = this.closest('.services-grid, .fleet-grid, .mgmt-grid');
+      var parentGrid = this.closest('.services-grid');
       if (parentGrid) {
         parentGrid.querySelectorAll('.expand-content.open').forEach(function (el) {
           if (el !== content) {
             el.classList.remove('open');
-            var siblingBtn = parentGrid.querySelector(`[data-target="${el.id}"]`);
+            var siblingBtn = parentGrid.querySelector('[data-target="' + el.id + '"]');
             if (siblingBtn) {
               siblingBtn.classList.remove('active');
               siblingBtn.textContent = siblingBtn.textContent.replace('▴', '▾');
@@ -87,6 +87,38 @@ document.addEventListener('DOMContentLoaded', function () {
         this.textContent = this.textContent.replace('▾', '▴');
       }
     });
+  });
+
+  // ── Aircraft Silhouette Hover Tooltip (touch support) ───────
+  var aircraftSilhouettes = document.querySelectorAll('.aircraft-silhouette');
+  aircraftSilhouettes.forEach(function (silhouette) {
+    silhouette.addEventListener('touchstart', function (e) {
+      // On touch devices, show tooltip on first tap, navigate on second
+      var tooltip = this.querySelector('.aircraft-tooltip');
+      if (tooltip && !tooltip.classList.contains('touch-visible')) {
+        e.preventDefault();
+        // Hide all other tooltips
+        document.querySelectorAll('.aircraft-tooltip.touch-visible').forEach(function (t) {
+          t.classList.remove('touch-visible');
+        });
+        tooltip.classList.add('touch-visible');
+        tooltip.style.opacity = '1';
+        tooltip.style.visibility = 'visible';
+        tooltip.style.transform = 'translateX(-50%) translateY(0)';
+      }
+    });
+  });
+
+  // Close tooltips when tapping elsewhere
+  document.addEventListener('touchstart', function (e) {
+    if (!e.target.closest('.aircraft-silhouette')) {
+      document.querySelectorAll('.aircraft-tooltip.touch-visible').forEach(function (t) {
+        t.classList.remove('touch-visible');
+        t.style.opacity = '';
+        t.style.visibility = '';
+        t.style.transform = '';
+      });
+    }
   });
 
   // ── Form Submission ─────────────────────────────────────────
@@ -122,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }, observerOptions);
 
   var animatedElements = document.querySelectorAll(
-    '.service-card, .fleet-card, .mgmt-card, .why-card, .dest-card, .step-card, .contact-card, .stat'
+    '.service-card, .why-card, .contact-card, .stat'
   );
   animatedElements.forEach(function (el) {
     observer.observe(el);
@@ -138,26 +170,16 @@ document.addEventListener('DOMContentLoaded', function () {
       var sectionHeight = section.offsetHeight;
       var sectionId = section.getAttribute('id');
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        document.querySelectorAll('.nav-menu a').forEach(function (link) {
+        document.querySelectorAll('.nav-menu > li > a').forEach(function (link) {
           link.classList.remove('active-link');
         });
-        var activeLink = document.querySelector(`.nav-menu a[href="#${sectionId}"]`);
+        var activeLink = document.querySelector('.nav-menu > li > a[href="#' + sectionId + '"]');
         if (activeLink) activeLink.classList.add('active-link');
       }
     });
   }
 
   window.addEventListener('scroll', updateActiveNavLink);
-
-  // ── Parallax Hero ───────────────────────────────────────────
-  var hero = document.querySelector('.hero');
-  window.addEventListener('scroll', function () {
-    if (!hero) return;
-    var scrolled = window.pageYOffset;
-    if (scrolled < window.innerHeight) {
-      hero.style.backgroundPositionY = `${50 + scrolled * 0.05}%`;
-    }
-  });
 
   console.log('Novans Jets website initialised successfully');
 });
