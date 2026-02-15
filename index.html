@@ -3,101 +3,551 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Private Aircraft Services</title>
-  <!--
-    This website template follows best‑practice guidelines drawn from research on luxury
-    private aviation websites and general UX principles.  A simple navigation, a
-    golden‑ratio hero section, clear fleet categories, a call‑to‑action form, and
-    trust indicators help visitors quickly understand the offering and request a quote.
-    See report.md for further details and citations.
-  -->
-  <!-- Use the plural styles.css to match the repository's naming convention -->
+  <title>Novans Jets — Private Aircraft Services</title>
+  <meta name="description" content="Novans Jets: International aviation group offering private jet &amp; helicopter charter, aircraft sales, leasing, management and maintenance services worldwide.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navigation bar with logo and primary navigation links -->
-  <header class="navbar">
-    <div class="logo">PrivateAir</div>
-    <nav>
-      <ul>
-        <li><a href="#fleet">Fleet</a></li>
-        <li><a href="#destinations">Destinations</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">Novans Jets</a>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#fleet">Fleet</a></li>
+          <li><a href="#charter">Charter</a></li>
+          <li><a href="#management">Management</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#quote" class="nav-cta">Request a Quote</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero section designed using the golden ratio (approximately 61.8% / 38.2% split) -->
-  <section class="hero">
+  <!-- Hero — third-person luxury airport perspective -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Fly Beyond Luxury</h1>
-      <p>Experience tailor‑made private aviation with transparent pricing and unparalleled service.</p>
-      <a href="#quote" class="cta">Request a Quote</a>
-    </div>
-    <div class="hero-image">
-      <!-- Placeholder image – replace with high‑quality aviation imagery -->
-    </div>
-  </section>
-
-  <!-- Fleet categories highlight the range of available aircraft.  Each card summarises
-       passenger capacity and range, allowing visitors to self‑select based on needs. -->
-  <section id="fleet" class="fleet">
-    <h2>Our Fleet</h2>
-    <div class="fleet-grid">
-      <div class="fleet-card">
-        <h3>Light Jets</h3>
-        <p>Ideal for regional trips; seats up to six passengers and offers a 3–4 hour range.</p>
-      </div>
-      <div class="fleet-card">
-        <h3>Midsize Jets</h3>
-        <p>Comfortable for seven to eight passengers with transcontinental range.</p>
-      </div>
-      <div class="fleet-card">
-        <h3>Super Midsize</h3>
-        <p>Spacious cabins for nine passengers and an extended range with premium amenities.</p>
-      </div>
-      <div class="fleet-card">
-        <h3>Heavy Jets</h3>
-        <p>The ultimate long‑haul comfort for up to fourteen passengers.</p>
+      <h1>Your Private Aviation Partner</h1>
+      <p class="hero-services"><span>Charter</span><span>Sales</span><span>Leasing</span><span>Management</span><span>Maintenance</span></p>
+      <p class="hero-sub">Experience bespoke private jet and helicopter services with complete transparency, comfort and confidentiality — anywhere in the world.</p>
+      <div class="hero-actions">
+        <a href="#quote" class="btn btn-gold">Request a Quote</a>
+        <a href="#services" class="btn btn-outline">Explore Services</a>
+        <a href="tel:+442038087778" class="btn btn-outline">Call 24/7</a>
       </div>
     </div>
   </section>
 
-  <!-- Destinations section for SEO‑friendly route pages (future content). -->
-  <section id="destinations" class="destinations">
-    <h2>Popular Routes</h2>
-    <p>From Kyiv to destinations worldwide – explore our curated route guides.</p>
+  <!-- Services — expanding accordion cards -->
+  <section id="services" class="section services-section">
+    <div class="section-inner">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">Comprehensive private aviation solutions tailored to your needs</p>
+      <div class="services-grid">
+
+        <div class="service-card expandable" data-expand="svc-charter">
+          <div class="service-icon">✈</div>
+          <h3>Private Jet Charter</h3>
+          <p>On-demand private jet charter for business and leisure, tailored to your schedule.</p>
+          <button class="btn btn-sm btn-gold expand-btn" data-target="svc-charter">Learn More ▾</button>
+          <div class="expand-content" id="svc-charter">
+            <p>Every charter is bespoke — from aircraft selection and route planning to in-flight catering and ground transportation. A personal manager is assigned to your journey, available 24/7 to handle every detail. All aircraft comply with international civil aviation safety standards and IS-BAO certification. Complete confidentiality guaranteed.</p>
+            <a href="#quote" class="btn btn-gold btn-sm">Book a Charter</a>
+          </div>
+        </div>
+
+        <div class="service-card expandable" data-expand="svc-helicopter">
+          <div class="service-icon">🚁</div>
+          <h3>Helicopter Charter</h3>
+          <p>Point-to-point helicopter transfers for urban and remote destinations.</p>
+          <button class="btn btn-sm btn-gold expand-btn" data-target="svc-helicopter">Learn More ▾</button>
+          <div class="expand-content" id="svc-helicopter">
+            <p>Quick, flexible helicopter charters for city transfers, island hops and hard-to-reach locations. Ideal for time-sensitive travel or scenic experiences. All helicopters are operated by experienced crews and maintained to the highest standards.</p>
+            <a href="#quote" class="btn btn-gold btn-sm">Book a Helicopter</a>
+          </div>
+        </div>
+
+        <div class="service-card expandable" data-expand="svc-sales">
+          <div class="service-icon">💎</div>
+          <h3>Aircraft Sales &amp; Acquisition</h3>
+          <p>Expert guidance for buying or selling private aircraft worldwide.</p>
+          <button class="btn btn-sm btn-gold expand-btn" data-target="svc-sales">Learn More ▾</button>
+          <div class="expand-content" id="svc-sales">
+            <p>Our acquisition specialists manage every step — market analysis, valuations, pre-purchase inspections, negotiations and closing. Whether you are buying your first aircraft or expanding a fleet, we ensure a smooth, transparent transaction with full documentation.</p>
+            <a href="#contact" class="btn btn-gold btn-sm">Speak to an Advisor</a>
+          </div>
+        </div>
+
+        <div class="service-card expandable" data-expand="svc-leasing">
+          <div class="service-icon">📋</div>
+          <h3>Aircraft Leasing</h3>
+          <p>Flexible short- and long-term leasing options without ownership burdens.</p>
+          <button class="btn btn-sm btn-gold expand-btn" data-target="svc-leasing">Learn More ▾</button>
+          <div class="expand-content" id="svc-leasing">
+            <p>Access the aircraft you need without the capital commitment. Our leasing programmes cover operational and financial structures for individuals and corporations, with transparent terms and dedicated account management throughout the lease period.</p>
+            <a href="#contact" class="btn btn-gold btn-sm">Enquire About Leasing</a>
+          </div>
+        </div>
+
+        <div class="service-card expandable" data-expand="svc-mgmt">
+          <div class="service-icon">⚙</div>
+          <h3>Aircraft Management</h3>
+          <p>End-to-end management of your private aircraft for safety and efficiency.</p>
+          <button class="btn btn-sm btn-gold expand-btn" data-target="svc-mgmt">Learn More ▾</button>
+          <div class="expand-content" id="svc-mgmt">
+            <p>Our management programme covers crew recruitment and training, scheduling, dispatch, maintenance coordination, regulatory compliance and financial reporting. We also offer charter revenue programmes to offset ownership costs when you are not flying.</p>
+            <a href="#management" class="btn btn-gold btn-sm">Management Details</a>
+          </div>
+        </div>
+
+        <div class="service-card expandable" data-expand="svc-maint">
+          <div class="service-icon">🔧</div>
+          <h3>Maintenance Services</h3>
+          <p>Comprehensive maintenance to keep your aircraft in peak condition.</p>
+          <button class="btn btn-sm btn-gold expand-btn" data-target="svc-maint">Learn More ▾</button>
+          <div class="expand-content" id="svc-maint">
+            <p>From routine inspections and scheduled overhauls to AOG support and interior refurbishment, our maintenance network ensures your aircraft remains safe, compliant and ready to fly at a moment's notice.</p>
+            <a href="#contact" class="btn btn-gold btn-sm">Schedule Maintenance</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 
-  <!-- About section emphasises the company’s commitment to personalised service and
-       technology, echoing industry trends such as AI‑powered personalisation. -->
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>PrivateAir blends cutting‑edge technology with concierge‑level service. Our AI‑powered
-      personalisation recommends aircraft and pricing based on your itinerary and
-      preferences.</p>
+  <!-- Fleet Section -->
+  <section id="fleet" class="section fleet-section">
+    <div class="section-inner">
+      <h2 class="section-title">Our Fleet</h2>
+      <p class="section-subtitle">Select the perfect aircraft for your mission profile</p>
+      <div class="fleet-grid">
+
+        <div class="fleet-card expandable" data-expand="fleet-light">
+          <div class="fleet-card-header">
+            <h3>Light Jets</h3>
+            <span class="fleet-tag">Up to 7 seats</span>
+          </div>
+          <p>Ideal for regional trips up to 3–4 hours. Cost-effective, fast and perfect for small groups.</p>
+          <button class="btn btn-sm btn-outline expand-btn" data-target="fleet-light">View Details ▾</button>
+          <div class="expand-content" id="fleet-light">
+            <ul>
+              <li><strong>Range:</strong> Up to 2,500 nm</li>
+              <li><strong>Cabin:</strong> Comfortable seating for 4–7 passengers</li>
+              <li><strong>Examples:</strong> Citation CJ3+, Phenom 300E, Learjet 75</li>
+              <li><strong>Best for:</strong> Short business trips, weekend getaways</li>
+            </ul>
+            <a href="#quote" class="btn btn-gold btn-sm">Charter a Light Jet</a>
+          </div>
+        </div>
+
+        <div class="fleet-card expandable" data-expand="fleet-mid">
+          <div class="fleet-card-header">
+            <h3>Midsize Jets</h3>
+            <span class="fleet-tag">Up to 9 seats</span>
+          </div>
+          <p>Spacious cabins for transcontinental flights with stand-up headroom and enhanced amenities.</p>
+          <button class="btn btn-sm btn-outline expand-btn" data-target="fleet-mid">View Details ▾</button>
+          <div class="expand-content" id="fleet-mid">
+            <ul>
+              <li><strong>Range:</strong> Up to 3,500 nm</li>
+              <li><strong>Cabin:</strong> Stand-up cabin, seating for 7–9 passengers</li>
+              <li><strong>Examples:</strong> Citation Latitude, Hawker 800XP, Learjet 60XR</li>
+              <li><strong>Best for:</strong> Cross-country flights, corporate travel</li>
+            </ul>
+            <a href="#quote" class="btn btn-gold btn-sm">Charter a Midsize Jet</a>
+          </div>
+        </div>
+
+        <div class="fleet-card expandable" data-expand="fleet-super">
+          <div class="fleet-card-header">
+            <h3>Super Midsize Jets</h3>
+            <span class="fleet-tag">Up to 10 seats</span>
+          </div>
+          <p>Extended range with premium amenities — the sweet spot between comfort and value.</p>
+          <button class="btn btn-sm btn-outline expand-btn" data-target="fleet-super">View Details ▾</button>
+          <div class="expand-content" id="fleet-super">
+            <ul>
+              <li><strong>Range:</strong> Up to 4,500 nm</li>
+              <li><strong>Cabin:</strong> Flat-floor, spacious cabin for 8–10 passengers</li>
+              <li><strong>Examples:</strong> Citation Sovereign+, Challenger 350, Gulfstream G280</li>
+              <li><strong>Best for:</strong> Longer journeys, premium business travel</li>
+            </ul>
+            <a href="#quote" class="btn btn-gold btn-sm">Charter a Super Midsize</a>
+          </div>
+        </div>
+
+        <div class="fleet-card expandable" data-expand="fleet-heavy">
+          <div class="fleet-card-header">
+            <h3>Heavy &amp; Ultra-Long-Range Jets</h3>
+            <span class="fleet-tag">Up to 19 seats</span>
+          </div>
+          <p>The ultimate in long-haul luxury — full-size cabins, bedrooms and intercontinental range.</p>
+          <button class="btn btn-sm btn-outline expand-btn" data-target="fleet-heavy">View Details ▾</button>
+          <div class="expand-content" id="fleet-heavy">
+            <ul>
+              <li><strong>Range:</strong> Up to 7,500+ nm (non-stop intercontinental)</li>
+              <li><strong>Cabin:</strong> Multiple zones, sleeping quarters, full galley</li>
+              <li><strong>Examples:</strong> Gulfstream G650, Bombardier Global 7500, Falcon 8X</li>
+              <li><strong>Best for:</strong> International travel, family trips, VIP delegations</li>
+            </ul>
+            <a href="#quote" class="btn btn-gold btn-sm">Charter a Heavy Jet</a>
+          </div>
+        </div>
+
+        <div class="fleet-card expandable" data-expand="fleet-heli">
+          <div class="fleet-card-header">
+            <h3>Helicopters</h3>
+            <span class="fleet-tag">Up to 12 seats</span>
+          </div>
+          <p>Versatile rotorcraft for city transfers, scenic tours and access to remote locations.</p>
+          <button class="btn btn-sm btn-outline expand-btn" data-target="fleet-heli">View Details ▾</button>
+          <div class="expand-content" id="fleet-heli">
+            <ul>
+              <li><strong>Range:</strong> Up to 500 nm</li>
+              <li><strong>Cabin:</strong> VIP configured for 2–12 passengers</li>
+              <li><strong>Examples:</strong> Airbus H145, Bell 429, Sikorsky S-76</li>
+              <li><strong>Best for:</strong> Airport transfers, island hops, aerial tours</li>
+            </ul>
+            <a href="#quote" class="btn btn-gold btn-sm">Charter a Helicopter</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 
-  <!-- Contact/Quote section featuring a streamlined form with minimal fields.  According
-       to industry best practices, reducing friction increases conversions. -->
-  <section id="contact" class="contact">
-    <h2>Start Your Journey</h2>
-    <form id="quote" autocomplete="on">
-      <input type="text" name="departure" placeholder="Departure City" required>
-      <input type="text" name="arrival" placeholder="Arrival City" required>
-      <input type="date" name="date" required>
-      <button type="submit">Get Instant Quote</button>
-    </form>
+  <!-- Charter Experience -->
+  <section id="charter" class="section charter-section">
+    <div class="charter-overlay"></div>
+    <div class="section-inner">
+      <h2 class="section-title light">The Charter Experience</h2>
+      <p class="section-subtitle light">From enquiry to landing — your journey is in expert hands</p>
+      <div class="charter-steps">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3>Request</h3>
+          <p>Submit your trip details through our form or call our 24/7 team.</p>
+          <a href="#quote" class="btn btn-gold btn-sm">Start Here</a>
+        </div>
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3>Personalise</h3>
+          <p>Your dedicated manager selects the optimal aircraft, plans the route and arranges all ground services.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3>Confirm</h3>
+          <p>Transparent pricing and documentation — review and approve every detail before departure.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <h3>Fly</h3>
+          <p>Arrive at the private terminal, board your aircraft and enjoy a seamless, luxurious journey.</p>
+          <a href="#quote" class="btn btn-gold btn-sm">Book Now</a>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Footer with trust badges and copyright information.  Certifications and
-       recognitions build credibility and reassure visitors. -->
+  <!-- Aircraft Management -->
+  <section id="management" class="section management-section">
+    <div class="section-inner">
+      <h2 class="section-title">Aircraft Management</h2>
+      <p class="section-subtitle">Optimise your investment with our turnkey management programme</p>
+      <div class="mgmt-grid">
+
+        <div class="mgmt-card expandable" data-expand="mgmt-ops">
+          <h3>Operations &amp; Scheduling</h3>
+          <p>24/7 dispatch, flight planning and crew scheduling for maximum availability.</p>
+          <button class="btn btn-sm btn-outline expand-btn" data-target="mgmt-ops">Details ▾</button>
+          <div class="expand-content" id="mgmt-ops">
+            <p>Our operations centre handles trip planning, overflight permits, slot reservations and weather monitoring so your aircraft is always ready when you are.</p>
+          </div>
+        </div>
+
+        <div class="mgmt-card expandable" data-expand="mgmt-crew">
+          <h3>Crew Recruitment &amp; Training</h3>
+          <p>Experienced, fully certified flight crews dedicated to your aircraft.</p>
+          <button class="btn btn-sm btn-outline expand-btn" data-target="mgmt-crew">Details ▾</button>
+          <div class="expand-content" id="mgmt-crew">
+            <p>We source, vet and employ pilots and cabin crew who meet the highest industry standards, with ongoing recurrent training and performance reviews.</p>
+          </div>
+        </div>
+
+        <div class="mgmt-card expandable" data-expand="mgmt-compliance">
+          <h3>Regulatory Compliance</h3>
+          <p>Navigate complex aviation regulations with confidence.</p>
+          <button class="btn btn-sm btn-outline expand-btn" data-target="mgmt-compliance">Details ▾</button>
+          <div class="expand-content" id="mgmt-compliance">
+            <p>Our compliance team manages AOC requirements, airworthiness directives, audit preparation and documentation to keep your aircraft fully compliant across jurisdictions.</p>
+          </div>
+        </div>
+
+        <div class="mgmt-card expandable" data-expand="mgmt-finance">
+          <h3>Financial Reporting</h3>
+          <p>Transparent budgeting, expense tracking and monthly financial reports.</p>
+          <button class="btn btn-sm btn-outline expand-btn" data-target="mgmt-finance">Details ▾</button>
+          <div class="expand-content" id="mgmt-finance">
+            <p>Receive detailed financial statements, cost analyses and projections to help you make informed decisions about your aviation asset.</p>
+          </div>
+        </div>
+
+        <div class="mgmt-card expandable" data-expand="mgmt-revenue">
+          <h3>Charter Revenue Programme</h3>
+          <p>Offset ownership costs by offering your aircraft for charter when not in use.</p>
+          <button class="btn btn-sm btn-outline expand-btn" data-target="mgmt-revenue">Details ▾</button>
+          <div class="expand-content" id="mgmt-revenue">
+            <p>We market and manage charter bookings on your aircraft, generating revenue while ensuring your priority access and aircraft condition are never compromised.</p>
+          </div>
+        </div>
+
+        <div class="mgmt-card expandable" data-expand="mgmt-maintenance">
+          <h3>Maintenance Coordination</h3>
+          <p>Proactive maintenance planning and vendor management worldwide.</p>
+          <button class="btn btn-sm btn-outline expand-btn" data-target="mgmt-maintenance">Details ▾</button>
+          <div class="expand-content" id="mgmt-maintenance">
+            <p>From scheduled inspections to unplanned AOG support, our maintenance team manages every aspect to ensure safety, compliance and aircraft availability.</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="section-action">
+        <a href="#contact" class="btn btn-gold">Discuss Management Options</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section why-section">
+    <div class="section-inner">
+      <h2 class="section-title">Why Novans Jets</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🔒</div>
+          <h3>Complete Confidentiality</h3>
+          <p>Your identity, itinerary and personal data are protected with the highest level of discretion.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">👤</div>
+          <h3>Personal Manager 24/7</h3>
+          <p>A dedicated aviation expert is assigned to you, available around the clock to manage every detail.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💰</div>
+          <h3>Transparent Pricing</h3>
+          <p>Clear, agreed-upon rates with full documentation — no hidden fees, no surprises.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🌍</div>
+          <h3>Global Network</h3>
+          <p>Strategic partnerships worldwide ensure premium service at every departure and arrival point.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">✅</div>
+          <h3>Safety Certified</h3>
+          <p>All aircraft meet international civil aviation safety standards and IS-BAO certification.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🎯</div>
+          <h3>Tailored Solutions</h3>
+          <p>No template journeys — every service is customised to your exact requirements and preferences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section about-section">
+    <div class="about-overlay"></div>
+    <div class="section-inner">
+      <h2 class="section-title light">About Novans Jets</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Novans Jets is an international aviation group specialising in private jets and helicopters. Headquartered in London, we deliver bespoke aviation solutions to discerning clients worldwide — from on-demand charter and aircraft sales to comprehensive management and maintenance programmes.</p>
+          <p>Our philosophy is built on four pillars: <strong>comfort</strong>, <strong>security</strong>, <strong>transparency</strong> and an <strong>individualised approach</strong>. Every client receives a personal manager who is available 24/7, and all pricing and documentation are agreed upon before your journey begins.</p>
+          <p>With a strategic global partner network and strict adherence to international safety standards including IS-BAO certification, Novans Jets ensures a seamless, premium experience wherever you fly.</p>
+          <div class="about-actions">
+            <a href="#contact" class="btn btn-gold">Get in Touch</a>
+            <a href="#services" class="btn btn-outline-light">Our Services</a>
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Availability</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">Global</span>
+            <span class="stat-label">Network</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">IS-BAO</span>
+            <span class="stat-label">Certified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations -->
+  <section id="destinations" class="section destinations-section">
+    <div class="section-inner">
+      <h2 class="section-title">Popular Destinations</h2>
+      <p class="section-subtitle">Fly direct to the world's most sought-after locations</p>
+      <div class="dest-grid">
+        <div class="dest-card">
+          <h3>London</h3>
+          <p>Farnborough, Luton, Biggin Hill</p>
+          <a href="#quote" class="btn btn-sm btn-gold">Fly to London</a>
+        </div>
+        <div class="dest-card">
+          <h3>Dubai</h3>
+          <p>Al Maktoum, Dubai International</p>
+          <a href="#quote" class="btn btn-sm btn-gold">Fly to Dubai</a>
+        </div>
+        <div class="dest-card">
+          <h3>New York</h3>
+          <p>Teterboro, Westchester, Republic</p>
+          <a href="#quote" class="btn btn-sm btn-gold">Fly to New York</a>
+        </div>
+        <div class="dest-card">
+          <h3>Nice</h3>
+          <p>Côte d'Azur, Cannes Mandelieu</p>
+          <a href="#quote" class="btn btn-sm btn-gold">Fly to Nice</a>
+        </div>
+        <div class="dest-card">
+          <h3>Geneva</h3>
+          <p>Geneva International</p>
+          <a href="#quote" class="btn btn-sm btn-gold">Fly to Geneva</a>
+        </div>
+        <div class="dest-card">
+          <h3>Moscow</h3>
+          <p>Vnukovo-3, Sheremetyevo</p>
+          <a href="#quote" class="btn btn-sm btn-gold">Fly to Moscow</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section id="quote" class="section quote-section">
+    <div class="quote-overlay"></div>
+    <div class="section-inner">
+      <h2 class="section-title light">Request a Quote</h2>
+      <p class="section-subtitle light">Fill in your trip details and we will respond within minutes</p>
+      <form id="quoteForm" class="quote-form" autocomplete="on">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="q-name">Full Name</label>
+            <input type="text" id="q-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="q-email">Email</label>
+            <input type="email" id="q-email" name="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="q-phone">Phone</label>
+            <input type="tel" id="q-phone" name="phone" placeholder="+44 20 3808 7778">
+          </div>
+          <div class="form-group">
+            <label for="q-service">Service</label>
+            <select id="q-service" name="service">
+              <option value="charter">Private Jet Charter</option>
+              <option value="helicopter">Helicopter Charter</option>
+              <option value="sales">Aircraft Sales &amp; Acquisition</option>
+              <option value="leasing">Aircraft Leasing</option>
+              <option value="management">Aircraft Management</option>
+              <option value="maintenance">Maintenance Services</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="q-departure">Departure</label>
+            <input type="text" id="q-departure" name="departure" placeholder="City or airport" required>
+          </div>
+          <div class="form-group">
+            <label for="q-arrival">Arrival</label>
+            <input type="text" id="q-arrival" name="arrival" placeholder="City or airport" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="q-date">Departure Date</label>
+            <input type="date" id="q-date" name="date" required>
+          </div>
+          <div class="form-group">
+            <label for="q-passengers">Passengers</label>
+            <input type="number" id="q-passengers" name="passengers" min="1" max="19" placeholder="Number of passengers">
+          </div>
+        </div>
+        <div class="form-group full-width">
+          <label for="q-message">Additional Details</label>
+          <textarea id="q-message" name="message" rows="3" placeholder="Special requests, return flights, catering preferences…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold btn-lg">Get Instant Quote</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact-section">
+    <div class="section-inner">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-subtitle">Available 24 hours a day, 7 days a week</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>📍 Office</h3>
+          <p>3rd Floor, 207 Regent Street<br>London, W1B 3HH<br>United Kingdom</p>
+          <a href="https://maps.google.com/?q=207+Regent+Street+London" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">View on Map</a>
+        </div>
+        <div class="contact-card">
+          <h3>📞 Phone</h3>
+          <p>+44 20 3808 7778</p>
+          <a href="tel:+442038087778" class="btn btn-sm btn-gold">Call Now</a>
+        </div>
+        <div class="contact-card">
+          <h3>✉ Email</h3>
+          <p>info@novansjets.com</p>
+          <a href="mailto:info@novansjets.com" class="btn btn-sm btn-gold">Send Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <div class="trust">
-      <span>ARGUS Gold Rated</span> | <span>Wyvern Registered</span>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">Novans Jets</span>
+        <p>International Aviation Group</p>
+      </div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#charter">Charter</a>
+        <a href="#management">Management</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="trust">
+        <span>IS-BAO Certified</span>
+        <span>ARGUS Rated</span>
+        <span>Wyvern Registered</span>
+      </div>
+      <p class="copyright">&copy; 2026 Novans Jets. All rights reserved.</p>
     </div>
-    <p>&copy; 2026 PrivateAir. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
